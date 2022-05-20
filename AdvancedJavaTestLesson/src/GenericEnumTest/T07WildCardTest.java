@@ -14,22 +14,26 @@ public class T07WildCardTest {
 			System.out.println(mem);
 		}
 	}
-	/*
-	 * public void printMemberInfo2(List<? super Member> list) {
-	 * 
-	 * super키워드를 이용한 하한제한(Lower Bounds) Member 타입의 변수를 이용하여 List로부터 객체를 꺼내올 수 있다.
-	 * 
-	 * for (Member obj : list) {//컴파일 에러발생 System.out.println(obj); } }
-	 */
 
-	/*
-	 * // 회원정보 등록 public void registerMemberInfo(List<? extends Member> list) {
-	 * 
-	 * Member 타입의 객체라고 항상 list에 추가할 수 있음을 보장할 수 없다. (Member타입 또는 Member를 상속한 그 어떤
-	 * 타입을 의미하므로 아직 구체적인 타입이 정해지지 않음 컴파일 에러 발생
-	 * 
-	 * Member m = new Member("홍길동", 33); list.add(m); // 등록 불가 }
-	 */
+//	public void printMemberInfo2(List<? super Member> list) {
+//
+//		// super키워드를 이용한 하한제한(Lower Bounds)
+//		// Member 타입의 변수를 이용하여 List로부터 객체를 꺼내올 수 있다.
+//
+//		for (Member obj : list) {// 컴파일 에러발생
+//			System.out.println(obj);
+//		}
+//	}
+
+//	// 회원정보 등록
+//	public void registerMemberInfo(List<? extends Member> list) {
+//
+//		// Member 타입의 객체라고 항상 list에 추가할 수 있음을 보장할 수 없다. (Member타입 또는 Member를 상속한 그 어떤
+//		// 타입을 의미하므로 아직 구체적인 타입이 정해지지 않음 컴파일 에러 발생
+//
+//		Member m = new Member("홍길동", 33);
+//		list.add(m); // 등록 불가
+//	}
 
 	public void registerMemberInfo2(List<? super Member> list) {
 		/*
