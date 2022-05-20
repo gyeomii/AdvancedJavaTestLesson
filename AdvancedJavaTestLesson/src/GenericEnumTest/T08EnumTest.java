@@ -17,6 +17,7 @@ public class T08EnumTest {
 	//City 열거형 객체선언 (기본값을 이용하는 열거형)
 	public enum City{서울, 부산, 대구, 광주, 대전};
 	
+	public enum HomeTown {부산, 대전, 포항};
 	//데이터값을 임의로 지정한 열거형 객체선언
 	//데이터값을 정해줄 경우에는 생성자를 만들어서 괄호속의 값이 변수에 자장되도록 함
 	public enum Season{
@@ -76,6 +77,7 @@ public class T08EnumTest {
 		City city = City.대구;
 		System.out.println(city == City.대전);
 		System.out.println(city == City.대구);
+//		System.out.println(HomeTown.대전 == City.대전);
 		System.out.println("-----------------------------------------");
 		System.out.println("대구 : " + city.compareTo(City.대구));
 		System.out.println("서울 : " + city.compareTo(City.서울));
