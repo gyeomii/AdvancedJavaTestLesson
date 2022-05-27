@@ -20,7 +20,7 @@ public class T03ConstructorMetadataTest {
 					+ Modifier.toString(modFlag));
 			
 			// 생성자의 파라미터타입 가져오기
-			Class<?>[] paramTypeArr = constructor.getExceptionTypes();
+			Class<?>[] paramTypeArr = constructor.getParameterTypes();
 			System.out.print("생성자의 파라미터 타입 : ");
 			for(Class<?> paramType : paramTypeArr) {
 				System.out.print(paramType.getName() + " | ");
@@ -31,7 +31,7 @@ public class T03ConstructorMetadataTest {
 			Class<?>[] exTypeArr = constructor.getExceptionTypes();
 			System.out.println("생성자가 던지는 예외타입 목록 : ");
 			for(Class<?> exType : exTypeArr) {
-				System.out.print(exType.getName() + " | ");
+				System.out.println(exType.getName() + " | ");
 			}
 			System.out.println("-----------------------------------------");
 		}
