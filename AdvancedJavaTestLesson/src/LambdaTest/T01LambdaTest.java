@@ -1,6 +1,6 @@
-package LamdaTest;
+package LambdaTest;
 
-public class T01LamdaTest {
+public class T01LambdaTest {
 // 람다식 : 익명함수를 생성하기 위한 식, 자바에서는 '매개변수를 갖는 코드블럭'
 //			런타임시 익명구현객체로 생성된다.
 // 형식 : 인터페이스명 객체변수명 = 람다식;
