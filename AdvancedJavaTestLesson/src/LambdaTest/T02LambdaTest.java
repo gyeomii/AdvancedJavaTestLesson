@@ -1,5 +1,8 @@
 package LambdaTest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class T02LambdaTest {
 	public static void main(String[] args) {
 		// 람다식을 사용하지 않는 경우
@@ -77,5 +80,20 @@ public class T02LambdaTest {
 		LambdaTestInterface3 lam9 = (x, y) -> x > y ? x : y;
 		k = lam9.test(100, 200);
 		System.out.println("k = " + k);
+		System.out.println("-----------------------------------------");
+		
+		List<String> strList = new ArrayList<>();
+		strList.add("홍길동");
+		strList.add("이몽룡");
+		strList.add("이순신");
+		strList.add("일지매");
+		strList.add("변학도");
+		
+		for (String str : strList) {
+				System.out.println("for문: " + str);
+		}
+		System.out.println("-----------------------------------------");
+		
+		strList.forEach(str -> System.out.println("Lambda식: " + str));
 	}
 }
