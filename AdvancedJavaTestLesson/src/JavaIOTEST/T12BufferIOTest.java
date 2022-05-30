@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-public class T12BufferIOTEST {
+public class T12BufferIOTest {
 	public static void main(String[] args) throws IOException {
 		// 문자기반의 Buffered 보조스트림 사용하기
 		// 이클립스에서 만든 자바프로그램이 실행되는 기본 위치는
