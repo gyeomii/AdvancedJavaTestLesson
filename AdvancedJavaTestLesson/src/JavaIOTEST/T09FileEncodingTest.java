@@ -1,5 +1,9 @@
 package JavaIOTEST;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class T09FileEncodingTest {
 /*
 	인코딩 방식
@@ -24,6 +28,32 @@ public class T09FileEncodingTest {
  	처음엔 2byte(65536)로 표현했지만, 부족해져서 21bit(약 200만 문자)로 확장되었다.
  */
 	public static void main(String[] args) {
+		FileInputStream fis = null;
+		InputStreamReader isr = null;
 		
+		try {
+			fis = new FileInputStream("D:/Others/test_ansi.txt");
+			
+			// 파일 인코딩을 이용하여 읽어오기
+			// InputStreamReader  객체는 파일의 인코딩 방식을 지정할 수 있다.
+			// 형식) new InputStreamReader(바이트기반스트림객체, 인코딩방식);
+			isr = new InputStreamReader(fis, "CP949");
+			
+			int data = 0;
+			
+			while((data = isr.read()) != -1) {
+				System.out.print((char)data);
+			}
+			System.out.println();
+			System.out.println("출력 끝");
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				isr.close();
+			} catch (IOException e) {
+				e.printStackTrace(); // 보조스트림만 닫아도 된다.
+			}
+		}
 	}
 }
