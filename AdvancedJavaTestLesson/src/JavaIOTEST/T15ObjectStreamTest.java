@@ -1,5 +1,7 @@
 package JavaIOTEST;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -22,8 +24,7 @@ public class T15ObjectStreamTest {
 			// 객체를 파일에 저장하기
 			
 			// 출력용 스트림 객체 생성
-			oos = new ObjectOutputStream(
-					new FileOutputStream("d:/Others/memObj.bin"));
+			oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("d:/Others/memObj.bin")));
 			
 			// 쓰기 작업 시작..
 			oos.writeObject(mem1); // 직렬화
@@ -47,8 +48,7 @@ public class T15ObjectStreamTest {
 		ObjectInputStream ois = null;
 		
 		try {
-			ois = new ObjectInputStream(
-					new FileInputStream("d:/Others/memObj.bin"));
+			ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream("d:/Others/memObj.bin")));
 			
 			Object obj = null;
 			// readObject() 호출시 역직렬화 발생함.
@@ -81,9 +81,14 @@ public class T15ObjectStreamTest {
 class Member implements Serializable {
 	// 자바는 Serializable 인터페이스를 구현한 클래스만 직렬화 할수 있도록
 	// 제한하고 있음. 
-	
-	private String name;
-	private int age;
+	/*
+		transient -> 직렬화가 되지 않을 멤버변수에 지정한다.
+					 직렬확가 되지 않는 멤버변수는 기본값으로 저장된다.
+					 (참조형 변수: null, 숫자형 변수: 0)
+					 *static 필드도 직렬화가 되지 않는다.
+	 */
+	private transient String name;
+	private transient int age;
 	private String addr;
 	public Member(String name, int age, String addr) {
 		super();
