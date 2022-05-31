@@ -1,4 +1,4 @@
-package JavaIOTEST;
+ package JavaIOTEST;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
