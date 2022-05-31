@@ -1,13 +1,16 @@
 package JavaIOTEST;
 
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 public class T15ObjectStreamTest {
 	public static void main(String[] args) {
-		//Member인스턴스 생성
+		
+		// Member 인스턴스 생성
 		Member mem1 = new Member("홍길동", 20, "대전");
 		Member mem2 = new Member("일지매", 30, "경기");
 		Member mem3 = new Member("이몽룡", 40, "부산");
@@ -16,30 +19,62 @@ public class T15ObjectStreamTest {
 		ObjectOutputStream oos = null;
 		
 		try {
-			//객체를 파일에 저장하기
+			// 객체를 파일에 저장하기
 			
-			//출력용 스트림 객체 생성
-			oos = new ObjectOutputStream(new FileOutputStream("D:/Others/memObj.bin"));
+			// 출력용 스트림 객체 생성
+			oos = new ObjectOutputStream(
+					new FileOutputStream("d:/Others/memObj.bin"));
 			
-			//쓰기 작업 시작
+			// 쓰기 작업 시작..
 			oos.writeObject(mem1); // 직렬화
-			oos.writeObject(mem2);
-			oos.writeObject(mem3);
-			oos.writeObject(mem4);
+			oos.writeObject(mem2); // 직렬화
+			oos.writeObject(mem3); // 직렬화
+			oos.writeObject(mem4); // 직렬화
 			
-			System.out.println("작업 완료");
+			System.out.println("쓰기 작업 완료");
 			
-		}catch(IOException e) {
-			e.printStackTrace();
+		}catch(IOException ex) {
+			ex.printStackTrace();
 		}finally {
 			try {
-				oos.close();// 스트림닫기
+				oos.close(); // 스트림 닫기
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} 
+		}
+		///////////////////////////////////////////////
+		
+		ObjectInputStream ois = null;
+		
+		try {
+			ois = new ObjectInputStream(
+					new FileInputStream("d:/Others/memObj.bin"));
+			
+			Object obj = null;
+			// readObject() 호출시 역직렬화 발생함.
+			while((obj = ois.readObject()) != null) {
+				// 마지막에 다다르면 EOF 예외가 발생함.
+				
+				// 읽어온 데이터를 원래의 객체형으로 변환후 사용한다.
+				Member mem = (Member) obj;
+				System.out.println("이름 : " + mem.getName());
+				System.out.println("나이 : " + mem.getAge());
+				System.out.println("주소 : " + mem.getAddr());
+				System.out.println("---------------------------------");
+			}
+			
+	   }catch(ClassNotFoundException ex) {
+			ex.printStackTrace();
+	   }catch(IOException ex) {
+			//ex.printStackTrace();
+		   System.out.println("출력 완료....");
+		}finally {
+			try {
+				ois.close();
+			} catch (IOException e) {
 				e.printStackTrace();
 			}
 		}
-		
 	}
 }
 
