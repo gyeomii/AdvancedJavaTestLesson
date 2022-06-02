@@ -45,7 +45,7 @@ public class T02JdbcTest {
 			// 3. Statement 객체 생성 -> Connection객체를 이용한다.
 			stmt = conn.createStatement();
 			// 4. SQL문을 Statement객체를 이용하여 실행하고 실행결과를 ResultSet객체에 저장
-//			String sql1 = "select * from lprod where lprod_id = " + lprodId; //실행할 쿼리문
+//			String sql1 = "select * from lprod where lprod_id > " + lprodId; //실행할 쿼리문
 			String sql2 = "select * from lprod where lprod_id between " + min + " and " + max ; //실행할 쿼리문
 			// SQL문이 select인 경우 executeQuery()메소드를 사용
 			// 그 외에는 executeUpdate()를 사용
