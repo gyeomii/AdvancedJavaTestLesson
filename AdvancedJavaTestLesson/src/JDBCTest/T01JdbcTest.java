@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class T01JDBCTest {
+public class T01JdbcTest {
 /*
 	JDBC를 이용한 데이터베이스 처리 순서
 	
