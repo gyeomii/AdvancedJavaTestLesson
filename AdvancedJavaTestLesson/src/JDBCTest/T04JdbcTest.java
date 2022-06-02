@@ -1,11 +1,6 @@
 package JDBCTest;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Scanner;
 
 /*
@@ -32,6 +27,7 @@ public class T04JdbcTest {
 
 			conn = DriverManager.getConnection(url, userId, password);
 			stmt = conn.createStatement();
+			
 			String sqlGetId = "select max(lprod_id) from lprod";
 			rs = stmt.executeQuery(sqlGetId);
 			int maxId = 0;
@@ -63,7 +59,8 @@ public class T04JdbcTest {
 			lprodNm = sc.next();
 			sc.close();
 			
-			String insertSql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)" + " values (?, ?, ?)";
+			String insertSql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
+								+ " values (?, ?, ?)";
 
 			pstmt = conn.prepareStatement(insertSql);
 			pstmt.setInt(1, maxId);
@@ -76,6 +73,7 @@ public class T04JdbcTest {
 			}else {
 				System.out.println("INSERT 작업 실패");
 			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
