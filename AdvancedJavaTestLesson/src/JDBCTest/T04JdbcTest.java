@@ -3,6 +3,8 @@ package JDBCTest;
 import java.sql.*;
 import java.util.Scanner;
 
+import util.JDBCUtil;
+
 /*
 	Lprod 테이블에 새로운 데이터를 추가하기
 	
@@ -19,13 +21,16 @@ public class T04JdbcTest {
 		Scanner sc = new Scanner(System.in);
 
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-
-			String url = "jdbc:oracle:thin:@localhost:1521/xe";
-			String userId = "KSG97";
-			String password = "java";
-
-			conn = DriverManager.getConnection(url, userId, password);
+//			Class.forName("oracle.jdbc.driver.OracleDriver");
+//
+//			String url = "jdbc:oracle:thin:@localhost:1521/xe";
+//			String userId = "KSG97";
+//			String password = "java";
+//
+//			conn = DriverManager.getConnection(url, userId, password);
+			
+			conn = JDBCUtil.getConnection();
+			
 			stmt = conn.createStatement();
 			
 			String sqlGetId = "select max(lprod_id) from lprod";
@@ -76,12 +81,8 @@ public class T04JdbcTest {
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		} finally {
-			if (pstmt != null) try { pstmt.close(); } catch (SQLException e) {}
-			if (stmt != null) try { stmt.close(); } catch (SQLException e) {}
-			if (conn != null) try { conn.close(); } catch (SQLException e) {}
+		}  finally {
+			JDBCUtil.close(conn, stmt, pstmt, rs);
 		}
 
 	}
