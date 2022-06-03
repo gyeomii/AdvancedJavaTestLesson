@@ -30,7 +30,7 @@ public class JDBCUtil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return null;
-		}
+		} 
 	}
 	
 	/**
@@ -41,10 +41,10 @@ public class JDBCUtil {
 	 * @param rs
 	 */
 	public static void close(Connection conn, Statement stmt, PreparedStatement pstmt, ResultSet rs) {
+		if (rs != null) try { rs.close(); } catch (SQLException e) {}
 		if (pstmt != null) try { pstmt.close(); } catch (SQLException e) {}
 		if (stmt != null) try { stmt.close(); } catch (SQLException e) {}
 		if (conn != null) try { conn.close(); } catch (SQLException e) {}
-		if (rs != null) try { conn.close(); } catch (SQLException e) {}
 	}
 	
 }
