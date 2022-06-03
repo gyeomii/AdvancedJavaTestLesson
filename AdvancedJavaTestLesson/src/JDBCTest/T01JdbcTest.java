@@ -42,7 +42,7 @@ public class T01JdbcTest {
 			String userId = "KSG97";
 			String password = "java";
 			
-			conn = DriverManager.getConnection(url, userId, password);
+			conn = DriverManager.getConnection(url, userId, password); //Connection객체 리턴
 			
 			// 3. Statement 객체 생성 -> Connection객체를 이용한다.
 			stmt = conn.createStatement();

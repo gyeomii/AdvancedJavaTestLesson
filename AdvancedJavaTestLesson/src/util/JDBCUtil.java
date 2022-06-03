@@ -12,7 +12,6 @@ public class JDBCUtil {
 	static {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("드라이버 로딩 완료");
 		} catch (ClassNotFoundException e) {
 			System.out.println("드라이버 로딩 실패");
 			e.printStackTrace();
