@@ -1,6 +1,7 @@
 package JDBCTest;
 
 import java.util.Enumeration;
+import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class T07ResourceBundleTest {
@@ -17,6 +18,7 @@ public class T07ResourceBundleTest {
 		// ResourceBundle객체 생성하기
 		// >> 파일을 지정할 때는 '파일명'만 지정하고 확장자는 지정하지 않는다.
 		//		(항상 properties이기 때문)
+		System.out.println(Locale.getDefault());
 		ResourceBundle bundle = ResourceBundle.getBundle("db");
 		
 		// key값들만 읽어오기

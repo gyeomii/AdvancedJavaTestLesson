@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-import util.JDBCUtil2;
+import util.JDBCUtil3;
 
 /*
 	회원정보를 관리하는 프로그램을 작성하는데 
@@ -126,7 +126,7 @@ public class T05MemberInfoTest {
 		String memAddr = scan.nextLine();
 
 		try {
-			conn = JDBCUtil2.getConnection();
+			conn = JDBCUtil3.getConnection();
 
 			String sql = "INSERT INTO mymember (mem_id, mem_name, mem_tel, mem_addr, reg_dt) VALUES ( ?, ?, ?, ?, sysdate)";
 
@@ -146,7 +146,7 @@ public class T05MemberInfoTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			JDBCUtil2.close(conn, stmt, pstmt, rs);
+			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 	}
 
@@ -161,7 +161,7 @@ public class T05MemberInfoTest {
 
 		try {
 			// Connection 객체 생성
-			conn = JDBCUtil2.getConnection();
+			conn = JDBCUtil3.getConnection();
 			// sql문 작성
 			String sql = "select count(*) as cnt from mymember where mem_id = ?";
 			// PrepareStatement 객체 생성
@@ -184,7 +184,7 @@ public class T05MemberInfoTest {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
-			JDBCUtil2.close(conn, stmt, pstmt, rs);
+			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 		// 중복여부 반환 (true : 중복, false : 중복아님)
 		return isExist;
@@ -210,7 +210,7 @@ public class T05MemberInfoTest {
 		} while (!isExist);
 		
 		try {
-			conn = JDBCUtil2.getConnection();
+			conn = JDBCUtil3.getConnection();
 			
 			String sql = "Delete from mymember WHERE mem_id = ?";
 			
@@ -227,7 +227,7 @@ public class T05MemberInfoTest {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			JDBCUtil2.close(conn, stmt, pstmt, rs);
+			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 	}
 	
@@ -265,7 +265,7 @@ public class T05MemberInfoTest {
 		String memAddr = scan.nextLine();
 		
 		try {
-			conn = JDBCUtil2.getConnection();
+			conn = JDBCUtil3.getConnection();
 			
 			String sql = "UPDATE mymember SET mem_name = ?, mem_tel = ?, mem_addr = ? WHERE mem_id = ?";
 			
@@ -285,7 +285,7 @@ public class T05MemberInfoTest {
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
-			JDBCUtil2.close(conn, stmt, pstmt, rs);
+			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 	}
 
@@ -296,7 +296,7 @@ public class T05MemberInfoTest {
 		System.out.println("-----------------------------------------------------------");
 
 		try {
-			conn = JDBCUtil2.getConnection();
+			conn = JDBCUtil3.getConnection();
 			
 			String sql = "select * from mymember";
 			
@@ -319,7 +319,7 @@ public class T05MemberInfoTest {
 			System.out.println("회원자료 가져오기 실패");
 			e.printStackTrace();
 		} finally {
-			JDBCUtil2.close(conn, stmt, pstmt, rs);
+			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 
 	}
