@@ -79,7 +79,7 @@ public class T05MemberInfoTest {
 				deleteMember();
 				break;
 			case 3: // 자료 수정
-				 updateMember();
+				updateMember();
 				break;
 			case 4: // 전체 자료 출력
 				displayMemberAll();
@@ -189,7 +189,8 @@ public class T05MemberInfoTest {
 		// 중복여부 반환 (true : 중복, false : 중복아님)
 		return isExist;
 	}
-	//회원정보를 삭제하기 위한 메소드
+
+	// 회원정보를 삭제하기 위한 메소드
 	private void deleteMember() {
 		String memId = "";
 		boolean isExist = false; // 중복체크용
@@ -208,29 +209,29 @@ public class T05MemberInfoTest {
 				System.out.println("다시 입력하세요");
 			}
 		} while (!isExist);
-		
+
 		try {
 			conn = JDBCUtil3.getConnection();
-			
+
 			String sql = "Delete from mymember WHERE mem_id = ?";
-			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memId);
-			
+
 			int cnt = pstmt.executeUpdate();
 			if (cnt > 0) {
 				System.out.println("<<'" + memId + "'" + "회원 삭제작업 성공>>");
 			} else {
 				System.out.println("<<'" + memId + "'" + "회원 삭제작업 실패>>");
 			}
-			
-		}catch(SQLException e) {
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 	}
-	
+
 	/**
 	 * 회원정보를 수정하기 위한 메소드
 	 */
@@ -252,7 +253,7 @@ public class T05MemberInfoTest {
 				System.out.println("다시 입력하세요");
 			}
 		} while (!isExist);
-		
+
 		System.out.print("Member Name    >> ");
 		String memName = scan.next();
 
@@ -263,28 +264,28 @@ public class T05MemberInfoTest {
 
 		System.out.print("Member Address >> ");
 		String memAddr = scan.nextLine();
-		
+
 		try {
 			conn = JDBCUtil3.getConnection();
-			
+
 			String sql = "UPDATE mymember SET mem_name = ?, mem_tel = ?, mem_addr = ? WHERE mem_id = ?";
-			
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memName);
 			pstmt.setString(2, memTel);
 			pstmt.setString(3, memAddr);
 			pstmt.setString(4, memId);
-			
+
 			int cnt = pstmt.executeUpdate();
 			if (cnt > 0) {
 				System.out.println("<<'" + memId + "'" + "회원 수정작업 성공>>");
 			} else {
 				System.out.println("<<'" + memId + "'" + "회원 수정작업 실패>>");
 			}
-			
-		}catch(SQLException e) {
+
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			JDBCUtil3.close(conn, stmt, pstmt, rs);
 		}
 	}
