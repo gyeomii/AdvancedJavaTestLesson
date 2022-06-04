@@ -72,7 +72,7 @@ public class T02JdbcTest {
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			//6. 종료 (사용했던 자원을 모두 반납한다.)
 			if(rs != null) try {rs.close();} catch(SQLException e) {}
 			if(stmt != null) try {stmt.close();} catch(SQLException e) {}
