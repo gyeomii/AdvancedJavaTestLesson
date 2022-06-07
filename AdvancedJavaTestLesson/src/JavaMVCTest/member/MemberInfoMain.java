@@ -51,11 +51,12 @@ public class MemberInfoMain {
 		System.out.println();
 		System.out.println("-----------------------");
 		System.out.println("  === 작 업 선 택 ===");
-		System.out.println("     1. 자료 입력");
-		System.out.println("     2. 자료 삭제");
-		System.out.println("     3. 자료 수정");
+		System.out.println("   1. 자료 입력");
+		System.out.println("   2. 자료 삭제");
+		System.out.println("   3. 자료 수정");
 		System.out.println("   4. 전체 자료 출력");
-		System.out.println("     5. 작업 끝.");
+		System.out.println("   5. 회원 정보 검색");
+		System.out.println("   6. 작업 끝.");
 		System.out.println("-----------------------");
 		System.out.print("원하는 작업 선택 >> ");
 	}
@@ -81,13 +82,16 @@ public class MemberInfoMain {
 			case 4: // 전체 자료 출력
 				displayMemberAll();
 				break;
-			case 5: // 작업 끝
+			case 5:
+				searchMember();
+				break;
+			case 6: // 작업 끝
 				System.out.println("작업을 마칩니다.");
 				break;
 			default:
 				System.out.println("번호를 잘못 입력했습니다. 다시입력하세요");
 			}
-		} while (choice != 5);
+		} while (choice != 6);
 	}
 
 	// 회원정보 추가 메소드
@@ -241,6 +245,52 @@ public class MemberInfoMain {
 		}
 	System.out.println("-----------------------------------------------------------");
 	System.out.println("출력 완료");
+	}
+	
+	//회원정보를 검색하는 메소드
+	private void searchMember() {
+		/*
+		 	검색할 회원ID, 회원이름, 전화번호, 주소 등을 입력하면 입력한 정보만 사용하여 검색하는 기능
+		 	주소는 입력한 값이 포함만 되어도 검색되도록 한다.
+		 	입력을 하지 않을 자료는 엔터키로 다음 입력으로 넘긴다.
+		 */
+		
+		scan.nextLine();
+		System.out.println("검색할 회원 정보를 입력하세요");
+		System.out.print("Member Name    >> ");
+		String memId = scan.nextLine().trim();
+
+		System.out.print("Member Name    >> ");
+		String memName = scan.nextLine().trim();
+
+		System.out.print("Member Tel     >> ");
+		String memTel = scan.nextLine().trim();
+
+		System.out.print("Member Address >> ");
+		String memAddr = scan.nextLine().trim();
+		
+		MemberVO mv = new MemberVO();
+		mv.setMemId(memId);
+		mv.setMemName(memName);
+		mv.setMemTel(memTel);
+		mv.setMemAddr(memAddr);
+		
+		List<MemberVO> memList = memService.getAllMemberList();
+
+		System.out.println("-----------------------------------------------------------");
+		System.out.println("ID\t이름\t 전화번호\t주소");
+		System.out.println("-----------------------------------------------------------");
+		if(memList.size() == 0) {
+			 System.out.println("검색된 회원 정보가 없습니다.");
+		}else{
+			for (MemberVO mv2 : memList) {
+			 System.out.println(mv2.getMemId() + "\t" + mv2.getMemName() +
+									"   "+ mv2.getMemTel() + "\t" + mv2.getMemAddr());
+			}
+		}
+	System.out.println("-----------------------------------------------------------");
+	System.out.println("출력 완료");
+	
 	}
 
 	public static void main(String[] args) {

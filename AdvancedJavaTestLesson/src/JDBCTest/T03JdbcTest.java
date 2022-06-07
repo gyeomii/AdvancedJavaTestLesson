@@ -20,29 +20,29 @@ public class T03JdbcTest {
 			String url = "jdbc:oracle:thin:@localhost:1521/xe";
 			String userId = "KSG97";
 			String password = "java";
-
-			conn = DriverManager.getConnection(url, userId, password);
-			/*
-			stmt = conn.createStatement();
-			
-			String sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
-						  + " values (101,'N101','농산물')";
-			
-			int cnt = stmt.executeUpdate(sql);
-			System.out.println("처리결과1 : " + cnt);
-			
-			sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
-					  + " values (102,'N102','수산물')";
-			
-			cnt = stmt.executeUpdate(sql);
-			System.out.println("처리결과2 : " + cnt);
-
-			sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
-					+ " values (103,'N103','축산물')";
-			
-			cnt = stmt.executeUpdate(sql);
-			System.out.println("처리결과3 : " + cnt);
-			*/
+//
+//			conn = DriverManager.getConnection(url, userId, password);
+//			
+//			stmt = conn.createStatement();
+//			
+//			String sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
+//						  + " values (101,'N101','농산물')";
+//			
+//			int cnt = stmt.executeUpdate(sql);
+//			System.out.println("처리결과1 : " + cnt);
+//			
+//			sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
+//					  + " values (102,'N102','수산물')";
+//			
+//			cnt = stmt.executeUpdate(sql);
+//			System.out.println("처리결과2 : " + cnt);
+//
+//			sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
+//					+ " values (103,'N103','축산물')";
+//			
+//			cnt = stmt.executeUpdate(sql);
+//			System.out.println("처리결과3 : " + cnt);
+		////	//////////////////////////////////////////////////////////////////////////
 			String sql = "Insert into lprod (lprod_id, lprod_gu, lprod_nm)"
 					  + " values (?, ?, ?)";
 			

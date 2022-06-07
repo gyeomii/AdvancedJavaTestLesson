@@ -44,5 +44,5 @@ public interface IMemberDAO {
 	 */
 	public boolean checkMember(String memId);
 	
-	
+	public List<MemberVO> searchMember(MemberVO mv);
 }

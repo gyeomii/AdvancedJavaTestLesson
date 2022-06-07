@@ -299,10 +299,10 @@ public class T05MemberInfoTest {
 		try {
 			conn = JDBCUtil3.getConnection();
 			
-			String sql = "select * from mymember";
 			
 			stmt = conn.createStatement();
 			
+			String sql = "select * from mymember";
 			rs = stmt.executeQuery(sql);
 			
 			while(rs.next()) {

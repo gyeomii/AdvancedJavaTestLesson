@@ -49,5 +49,11 @@ public class MemberServiceImpl implements IMemberService {
 		boolean isExist = memDao.checkMember(memId);
 		return isExist;
 	}
+	
+	@Override
+	public List<MemberVO> searchMember(MemberVO mv) {
+		List<MemberVO> memList = memDao.searchMember(mv);
+		return memList;
+	}
 
 }

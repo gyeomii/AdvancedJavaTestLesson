@@ -145,4 +145,63 @@ public class MemberDAOImpl implements IMemberDAO{
 		// 중복여부 반환 (true : 중복, false : 중복아님)
 		return isExist;
 	}
+
+	@Override
+	public List<MemberVO> searchMember(MemberVO mv) {
+		List<MemberVO> memList = new ArrayList<MemberVO>();
+		try {
+			conn = JDBCUtil3.getConnection();
+			
+			//and를 쓰기위해 1=1을 사용(다이나믹 쿼리 위함)
+			String sql = "select * from mymember where 1=1";
+//			갖고온게 null이 아니고 빈칸이 아니면
+			if (mv.getMemId() != null && !mv.getMemId().equals("")) {
+				sql += " and mem_id = ?";
+			}
+			if (mv.getMemName() != null && !mv.getMemName().equals("")) {
+				sql += " and mem_name = ?";
+			}
+			if (mv.getMemTel() != null && !mv.getMemTel().equals("")) {
+				sql += " and mem_tel = ?";
+			}
+			if (mv.getMemAddr() != null && !mv.getMemAddr().equals("")) {
+				sql += " and mem_addr like '%' || ? || '%' ";
+			}
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			//값이 존재할 때 index변수를 사용하여 ? 에 데이터 삽입
+			int index = 1;
+			if (mv.getMemId() != null && !mv.getMemId().equals("")) {
+				pstmt.setString(index++, mv.getMemId());
+			}
+			if (mv.getMemName() != null && !mv.getMemName().equals("")) {
+				pstmt.setString(index++, mv.getMemName());
+			}
+			if (mv.getMemTel() != null && !mv.getMemTel().equals("")) {
+				pstmt.setString(index++, mv.getMemTel());
+			}
+			if (mv.getMemAddr() != null && !mv.getMemAddr().equals("")) {
+				pstmt.setString(index++, mv.getMemAddr());
+			}
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				MemberVO mv2 = new MemberVO();
+				mv2.setMemId(rs.getString("mem_id"));
+				mv2.setMemName(rs.getString("mem_name"));
+				mv2.setMemTel(rs.getString("mem_tel"));
+				mv2.setMemAddr(rs.getString("mem_addr"));
+				
+				memList.add(mv2);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCUtil3.close(conn, stmt, pstmt, rs);
+		}
+		return memList;
+	}
 }

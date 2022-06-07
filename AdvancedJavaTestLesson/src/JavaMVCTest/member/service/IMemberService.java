@@ -44,4 +44,11 @@ public interface IMemberService {
 	 * @return 해당 회원ID의 회원정보가 존재하면 true, 없으면 false
 	 */
 	public boolean checkMember(String memId);
+	
+	/**
+	 * 주어진 회원정보를 이용하여 해당 회원정보를 검색하는 메소드
+	 * @param mv 검색에 사용할 회원정보
+	 * @return 검색된 회원정보를 담은 List
+	 */
+	public List<MemberVO> searchMember(MemberVO mv);
 }
