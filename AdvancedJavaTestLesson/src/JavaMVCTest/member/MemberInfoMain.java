@@ -124,7 +124,6 @@ public class MemberInfoMain {
 
 		System.out.print("Member Address >> ");
 		String memAddr = scan.nextLine();
-
 		try {
 			conn = JDBCUtil3.getConnection();
 
