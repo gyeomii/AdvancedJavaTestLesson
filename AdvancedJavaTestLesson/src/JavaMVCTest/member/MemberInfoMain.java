@@ -257,7 +257,7 @@ public class MemberInfoMain {
 		
 		scan.nextLine();
 		System.out.println("검색할 회원 정보를 입력하세요");
-		System.out.print("Member Name    >> ");
+		System.out.print("Member Id    >> ");
 		String memId = scan.nextLine().trim();
 
 		System.out.print("Member Name    >> ");
@@ -275,7 +275,7 @@ public class MemberInfoMain {
 		mv.setMemTel(memTel);
 		mv.setMemAddr(memAddr);
 		
-		List<MemberVO> memList = memService.getAllMemberList();
+		List<MemberVO> memList = memService.searchMember(mv);
 
 		System.out.println("-----------------------------------------------------------");
 		System.out.println("ID\t이름\t 전화번호\t주소");

@@ -28,7 +28,7 @@ public class MemberDAOImpl implements IMemberDAO{
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mv.getMemId());
 			pstmt.setString(2, mv.getMemName());
-			pstmt.setString(3, mv.getMemName());
+			pstmt.setString(3, mv.getMemTel());
 			pstmt.setString(4, mv.getMemAddr());
 
 			cnt = pstmt.executeUpdate();
@@ -159,7 +159,7 @@ public class MemberDAOImpl implements IMemberDAO{
 				sql += " and mem_id = ?";
 			}
 			if (mv.getMemName() != null && !mv.getMemName().equals("")) {
-				sql += " and mem_name = ?";
+				sql += " and mem_name like '%' || ? || '%' ";
 			}
 			if (mv.getMemTel() != null && !mv.getMemTel().equals("")) {
 				sql += " and mem_tel = ?";
