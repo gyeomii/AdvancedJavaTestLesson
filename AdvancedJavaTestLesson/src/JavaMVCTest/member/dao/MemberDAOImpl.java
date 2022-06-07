@@ -11,7 +11,7 @@ import java.util.List;
 import JavaMVCTest.member.vo.MemberVO;
 import util.JDBCUtil3;
 
-public class MemberDAOImple implements IMemberDAO{
+public class MemberDAOImpl implements IMemberDAO{
 	
 	private Connection conn = null;
 	private Statement stmt = null;
@@ -145,5 +145,4 @@ public class MemberDAOImple implements IMemberDAO{
 		// 중복여부 반환 (true : 중복, false : 중복아님)
 		return isExist;
 	}
-
 }
