@@ -1,4 +1,4 @@
-package A12MyBatisTest.vo;
+package A10SingletonTest.member2.vo;
 /**
  * DB 테이블에 있는 컬럼을 기준으로 데이터를 객체화한 클래스
  * @author gyeomii

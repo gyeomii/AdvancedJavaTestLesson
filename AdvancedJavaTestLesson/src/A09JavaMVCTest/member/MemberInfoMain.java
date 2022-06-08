@@ -1,11 +1,11 @@
-package A10JavaMVCTest.member;
+package A09JavaMVCTest.member;
 
 import java.util.List;
 import java.util.Scanner;
 
-import A10JavaMVCTest.member.service.IMemberService;
-import A10JavaMVCTest.member.service.MemberServiceImpl;
-import A10JavaMVCTest.member.vo.MemberVO;
+import A09JavaMVCTest.member.service.IMemberService;
+import A09JavaMVCTest.member.service.MemberServiceImpl;
+import A09JavaMVCTest.member.vo.MemberVO;
 
 /*
 	회원정보를 관리하는 프로그램을 작성하는데 

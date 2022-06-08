@@ -1,4 +1,4 @@
-package A11SingletonTest;
+package A10SingletonTest;
 
 public class MySingleton {
 /*

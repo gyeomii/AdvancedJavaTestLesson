@@ -1,21 +1,23 @@
-package A10JavaMVCTest.member.dao;
+package A10SingletonTest.member2.service;
 
 import java.util.List;
 
-import A10JavaMVCTest.member.vo.MemberVO;
+import A10SingletonTest.member2.vo.MemberVO;
+
 
 /**
- * 실제 DB와 연결해서 SQL문을 수행하여 결과를 조회한 후
- * 서비스에 전달하는 DAO의 인터페이스
- * @author gyeomii
+ * Service객체는 DAO에 설정된 메서드를 원하는 작업에 맞게 호출하여 결과를 받아오고,
+ * 받아온 결과 자료를 Controller에게 보내주는 역할을 한다.
+ * 
+ * 보통 DAO의 메서드 구조와 같게 만든다.
  */
-public interface IMemberDAO {
+public interface IMemberService {
 	/**
 	 * MemberVO에 담긴 데이터를 DB에 INSERT하는 메소드
 	 * @param mv DB에 INSERT할 데이터가 저장된 MemberVO객체
 	 * @return DB작업이 성공하면 1이상의 값이 반환, 실패하면 0이 반환됨
 	 */
-	public int insertMember(MemberVO mv);
+	public int registMember(MemberVO mv);
 	
 	/**
 	 * 하나의 MemberVO 데이터를 이용하여 DB를 UPDATE하는 메소드
@@ -44,5 +46,10 @@ public interface IMemberDAO {
 	 */
 	public boolean checkMember(String memId);
 	
+	/**
+	 * 주어진 회원정보를 이용하여 해당 회원정보를 검색하는 메소드
+	 * @param mv 검색에 사용할 회원정보
+	 * @return 검색된 회원정보를 담은 List
+	 */
 	public List<MemberVO> searchMember(MemberVO mv);
 }

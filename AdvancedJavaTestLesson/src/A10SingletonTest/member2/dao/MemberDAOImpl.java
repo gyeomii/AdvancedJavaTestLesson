@@ -1,4 +1,4 @@
-package A11SingletonTest.member2.dao;
+package A10SingletonTest.member2.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import A11SingletonTest.member2.vo.MemberVO;
+import A10SingletonTest.member2.vo.MemberVO;
 import util.JDBCUtil3;
 
 public class MemberDAOImpl implements IMemberDAO{

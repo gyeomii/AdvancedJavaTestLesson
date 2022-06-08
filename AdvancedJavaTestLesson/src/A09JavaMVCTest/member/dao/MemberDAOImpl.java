@@ -1,4 +1,4 @@
-package A10JavaMVCTest.member.dao;
+package A09JavaMVCTest.member.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import A10JavaMVCTest.member.vo.MemberVO;
+import A09JavaMVCTest.member.vo.MemberVO;
 import util.JDBCUtil3;
 
 public class MemberDAOImpl implements IMemberDAO{

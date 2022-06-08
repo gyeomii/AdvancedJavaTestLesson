@@ -1,11 +1,11 @@
-package A11SingletonTest.member2;
+package A10SingletonTest.member2;
 
 import java.util.List;
 import java.util.Scanner;
 
-import A11SingletonTest.member2.service.IMemberService;
-import A11SingletonTest.member2.service.MemberServiceImpl;
-import A11SingletonTest.member2.vo.MemberVO;
+import A10SingletonTest.member2.service.IMemberService;
+import A10SingletonTest.member2.service.MemberServiceImpl;
+import A10SingletonTest.member2.vo.MemberVO;
 
 /*
 	회원정보를 관리하는 프로그램을 작성하는데 

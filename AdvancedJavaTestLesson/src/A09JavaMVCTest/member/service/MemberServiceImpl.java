@@ -1,10 +1,10 @@
-package A10JavaMVCTest.member.service;
+package A09JavaMVCTest.member.service;
 
 import java.util.List;
 
-import A10JavaMVCTest.member.dao.IMemberDAO;
-import A10JavaMVCTest.member.dao.MemberDAOImpl;
-import A10JavaMVCTest.member.vo.MemberVO;
+import A09JavaMVCTest.member.dao.IMemberDAO;
+import A09JavaMVCTest.member.dao.MemberDAOImpl;
+import A09JavaMVCTest.member.vo.MemberVO;
 
 public class MemberServiceImpl implements IMemberService {
 

@@ -1,10 +1,10 @@
-package A11SingletonTest.member2.service;
+package A10SingletonTest.member2.service;
 
 import java.util.List;
 
-import A11SingletonTest.member2.dao.IMemberDAO;
-import A11SingletonTest.member2.dao.MemberDAOImpl;
-import A11SingletonTest.member2.vo.MemberVO;
+import A10SingletonTest.member2.dao.IMemberDAO;
+import A10SingletonTest.member2.dao.MemberDAOImpl;
+import A10SingletonTest.member2.vo.MemberVO;
 
 public class MemberServiceImpl implements IMemberService {
 

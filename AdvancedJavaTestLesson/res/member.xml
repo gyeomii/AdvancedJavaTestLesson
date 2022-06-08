@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberTest">
+	<!-- Insert 연습 -->
+	<insert id="insertMember" parameterType="A11MyBatisTest.vo.MemberVO">
+		INSERT INTO mymember (mem_id, mem_name, mem_tel, mem_addr, reg_dt)
+		VALUES ( #{memId}, #{memName}, #{memTel}, #{memAddr}, sysdate)
+	</insert>
+</mapper>

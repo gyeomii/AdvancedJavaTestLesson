@@ -1,4 +1,4 @@
-package A10JavaMVCTest.member.vo;
+package A11MyBatisTest.vo;
 /**
  * DB 테이블에 있는 컬럼을 기준으로 데이터를 객체화한 클래스
  * @author gyeomii
