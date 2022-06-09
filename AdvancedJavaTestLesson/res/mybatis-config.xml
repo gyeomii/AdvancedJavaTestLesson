@@ -4,6 +4,10 @@
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<properties resource="db.properties" />
+	<settings>
+		<!-- DB컬럼명을 camel표기법으로 속성명과 자동 매핑하도록 설정 -->
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
 	
 	<environments default="development">
 		<environment id="development">
