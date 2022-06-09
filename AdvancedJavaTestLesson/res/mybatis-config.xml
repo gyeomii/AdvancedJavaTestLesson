@@ -22,7 +22,7 @@
 	</environments>
 	
 	<mappers>
-		<mapper resource="member.xml"/>
+		<mapper resource="mapper/member.xml"/>
 	</mappers>
 	
 </configuration>

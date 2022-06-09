@@ -3,15 +3,19 @@ package A11MyBatisTest.dao;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.ibatis.session.SqlSession;
+
 import A11MyBatisTest.vo.MemberVO;
+import util.MyBatisUtil;
 
 
 public class MemberDAOImpl implements IMemberDAO{
 	
 	private static IMemberDAO memDao;
+	private SqlSession sqlSession;
 	
 	private MemberDAOImpl() {
-		
+		sqlSession = MyBatisUtil.getInstance();
 	}
 	
 	public static IMemberDAO getInstance() {
@@ -23,12 +27,13 @@ public class MemberDAOImpl implements IMemberDAO{
 	
 	@Override
 	public int insertMember(MemberVO mv) {
-		return 0;
-		
+		int cnt = sqlSession.insert("",mv);
+		return cnt;
 	}
 
 	@Override
 	public int updatetMember(MemberVO mv) {
+		int cnt = sqlSession.update("", mv);
 		return 0;
 		
 	}
@@ -60,3 +65,7 @@ public class MemberDAOImpl implements IMemberDAO{
 		return memList;
 	}
 }
+
+
+
+
