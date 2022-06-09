@@ -1,4 +1,4 @@
-package A11MyBatisTest;
+package A11MyBatisTest.main;
 
 import java.util.List;
 import java.util.Scanner;
