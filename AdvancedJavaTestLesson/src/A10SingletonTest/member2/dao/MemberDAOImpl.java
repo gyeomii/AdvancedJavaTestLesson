@@ -66,7 +66,7 @@ public class MemberDAOImpl implements IMemberDAO{
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, mv.getMemId());
 			pstmt.setString(2, mv.getMemName());
-			pstmt.setString(3, mv.getMemName());
+			pstmt.setString(3, mv.getMemTel());
 			pstmt.setString(4, mv.getMemAddr());
 
 			cnt = pstmt.executeUpdate();
