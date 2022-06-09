@@ -23,7 +23,7 @@ public class T15ObjectStreamTest {
 		try {
 			// 객체를 파일에 저장하기
 			
-			// 출력용 스트림 객체 생성
+			// 출력용 스트림 객체 생성	
 			oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("d:/Others/memObj.bin")));
 			
 			// 쓰기 작업 시작..
