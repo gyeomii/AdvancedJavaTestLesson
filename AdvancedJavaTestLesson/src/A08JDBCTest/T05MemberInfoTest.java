@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
+import org.apache.log4j.Logger;
+
 import util.JDBCUtil3;
 
 /*
@@ -46,7 +48,10 @@ public class T05MemberInfoTest {
 	private ResultSet rs = null;
 
 	private Scanner scan = new Scanner(System.in);
-
+	private static Logger SQL_LOGGER = Logger.getLogger("log4jexam.sql.Query");
+	private static Logger PARAM_LOGGER = Logger.getLogger("log4jexam.sql.Parameter");
+	private static Logger RESULT_LOGGER = Logger.getLogger(T05MemberInfoTest.class);
+	
 	/**
 	 * 메뉴를 출력하는 메서드
 	 */
@@ -129,14 +134,22 @@ public class T05MemberInfoTest {
 			conn = JDBCUtil3.getConnection();
 
 			String sql = "INSERT INTO mymember (mem_id, mem_name, mem_tel, mem_addr, reg_dt) VALUES ( ?, ?, ?, ?, sysdate)";
-
+			
+			SQL_LOGGER.info("SQL : " + sql);			
+			
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, memId);
 			pstmt.setString(2, memName);
 			pstmt.setString(3, memTel);
 			pstmt.setString(4, memAddr);
 
+			PARAM_LOGGER.debug("memId : " + memId + ", memName : " + memName 
+								+ ", memTel : " + memTel + ", memAddr : " + memAddr);
+			
 			int cnt = pstmt.executeUpdate();
+			
+			RESULT_LOGGER.error("cnt : " + cnt);
+			
 			if (cnt > 0) {
 				System.out.println("<<'" + memId + "'" + "회원 추가작업 성공>>");
 			} else {
