@@ -27,7 +27,7 @@ public class TCPFileServer {
 				socket = server.accept();
 				System.out.println("파일 전송 시작");
 				
-				fis = new FileInputStream("d:/D_Other/aaa.jpg");
+				fis = new FileInputStream("d:/D_Other/popcat_open.png");
 				
 				out = socket.getOutputStream();
 				
