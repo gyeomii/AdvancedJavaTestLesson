@@ -4,10 +4,10 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-public class Receiver extends Thread {
+public class T01Receiver extends Thread {
 	private DataInputStream dis;
 
-	public Receiver(Socket socket) {
+	public T01Receiver(Socket socket) {
 		try {
 			dis = new DataInputStream(socket.getInputStream());
 		} catch (IOException e) {

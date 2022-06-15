@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class Sender extends Thread{
+public class T01Sender extends Thread{
 	private Scanner scanner;
 	private String name;
 	private DataOutputStream dos;
 	
-	public Sender(Socket socket) {
+	public T01Sender(Socket socket) {
 		name = "[" + socket.getInetAddress() + " : " + socket.getLocalPort() + "]";
 		scanner = new Scanner(System.in);
 		

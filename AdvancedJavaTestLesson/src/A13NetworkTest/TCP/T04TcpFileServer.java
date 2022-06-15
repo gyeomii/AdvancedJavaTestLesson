@@ -1,4 +1,4 @@
-package A13NetworkTest.multichat;
+package A13NetworkTest.TCP;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -8,7 +8,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TCPFileServer {
+public class T04TcpFileServer {
 /*
 	서버는 클라이언트가 접속하면 서버 컴퓨터의 D:/D_Other폴더에 있는 Tulips.jpg파일을 클라이언트로 전송
  */
@@ -49,6 +49,6 @@ public class TCPFileServer {
 		}
 	}
 	public static void main(String[] args) {
-		new TCPFileServer().serverStart();
+		new T04TcpFileServer().serverStart();
 	}
 }

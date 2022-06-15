@@ -6,7 +6,7 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class TCPSocketServerTest {
+public class T03TcpSocketServerTest {
 	public static void main(String[] args) throws IOException {
 		// 소켓 : 두 호스트간 통신을 하기 위한 양 끝단(End Point)을 말한다.
 		// TCP 소켓 통신을 하기 위해 ServerSocket객체 생성하기

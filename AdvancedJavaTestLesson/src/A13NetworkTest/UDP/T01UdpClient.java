@@ -5,13 +5,13 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 
-public class UDPClient {
+public class T01UdpClient {
 	private DatagramSocket ds;
 	private DatagramPacket dp;
 
 	private byte[] msg;
 
-	public UDPClient() {
+	public T01UdpClient() {
 		try {
 			msg = new byte[100];
 			// 소켓 객체 생성(포트번호 명시하지 않으면 포트번호는 사용가능한 임의의 포트번호 할당)
@@ -35,6 +35,6 @@ public class UDPClient {
 		}
 	}
 	public static void main(String[] args) {
-		new UDPClient().start();
+		new T01UdpClient().start();
 		}
 }

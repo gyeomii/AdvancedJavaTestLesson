@@ -3,7 +3,7 @@ package A13NetworkTest.TCP;
 import java.io.IOException;
 import java.net.Socket;
 
-public class TcpChatClient {
+public class T02TcpChatClient {
 	public static void main(String[] args) {
 		Socket socket = null;
 		try {
@@ -11,8 +11,8 @@ public class TcpChatClient {
 			
 			System.out.println("서버에 연결 되었습니다.\\(^@^)/");
 			
-			Sender sender = new Sender(socket);
-			Receiver receiver = new Receiver(socket);
+			T01Sender sender = new T01Sender(socket);
+			T01Receiver receiver = new T01Receiver(socket);
 			
 			sender.start();
 			receiver.start();

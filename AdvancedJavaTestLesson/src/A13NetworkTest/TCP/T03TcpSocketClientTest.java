@@ -5,7 +5,7 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.net.Socket;
 
-public class TCPSocketClientTest {
+public class T03TcpSocketClientTest {
 	public static void main(String[] args) throws IOException{
 		String serverIp = "127.0.0.1";
 		// 자기자신을 나타내는 방법

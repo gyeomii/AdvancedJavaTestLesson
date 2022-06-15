@@ -7,12 +7,12 @@ import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class UDPServer {
+public class T01UdpServer {
 	private DatagramSocket ds;
 	private DatagramPacket dp;
 	private byte[] msg;  // 패킷 송수신을 위한 바이트배열 선언
 	
-	public UDPServer() {
+	public T01UdpServer() {
 		try {
 			// 메시지 수신을 위한 포트번호 설정
 			ds = new DatagramSocket(8888); 
@@ -50,6 +50,6 @@ public class UDPServer {
 		}
 	}
 	public static void main(String[] args) throws IOException {
-		new UDPServer().start();
+		new T01UdpServer().start();
 	}
 }
