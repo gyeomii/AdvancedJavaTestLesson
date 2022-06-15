@@ -59,7 +59,7 @@ public class MultiChatServer {
 	 * 대화방 즉, Map에 저장된 전체 유저에게 안내메시지를 전송하는 메서드
 	 * @param msg 안내 메시지
 	 */
-	public void sendMessage(String msg) {
+	public void sendMessage(String msg) { //[성겸] >> 안녕
 		Iterator<String> it = clients.keySet().iterator();
 		while (it.hasNext()) {
 			try {
@@ -80,8 +80,8 @@ public class MultiChatServer {
 	 * @param msg
 	 * @param from
 	 */
-	public void sendMessage(String msg, String from) {
-		sendMessage("[" + from + "] >> " + msg);
+	public void sendMessage(String msg, String from) { // 안녕, 성겸
+		sendMessage("[" + from + "] >> " + msg); //[성겸] >> 안녕
 	}
 	
 	/**
@@ -122,7 +122,7 @@ public class MultiChatServer {
 				// 이후 메세지 처리는 반복문으로 처리한다.
 				// 한 클라이언트가 보낸 메세지를 다른 모든 클라이언트에게 보내준다.
 				while (dis != null) {
-					sendMessage(dis.readUTF(), name);
+					sendMessage(dis.readUTF(), name); //안녕, 성겸
 				}
 			} catch (Exception e) {
 				// e.printStackTrace();

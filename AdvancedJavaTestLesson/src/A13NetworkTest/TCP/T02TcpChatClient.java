@@ -7,7 +7,7 @@ public class T02TcpChatClient {
 	public static void main(String[] args) {
 		Socket socket = null;
 		try {
-			socket = new Socket("192.168.141.33", 7777);
+			socket = new Socket("192.168.141.16", 7777);
 			
 			System.out.println("서버에 연결 되었습니다.\\(^@^)/");
 			

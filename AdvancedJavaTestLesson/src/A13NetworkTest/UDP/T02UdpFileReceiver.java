@@ -82,6 +82,6 @@ public class T02UdpFileReceiver {
 	}
 	
 	public static void main(String[] args) throws IOException {
-		new T02UdpFileReceiver(7777).start();
+		new T02UdpFileReceiver(8888).start();
 	}
 }
