@@ -20,7 +20,7 @@ public class T02UdpFileSender {
 			ds = new DatagramSocket();
 			this.port = port;
 			this.receiverAddr = InetAddress.getByName(receiverIp);
-
+			file = new File("d:/D_Other/mew.jpg");
 			if (!file.exists()) {
 				System.out.println("해당 파일이 존재하지 않습니다.");
 				System.exit(0);
@@ -62,14 +62,14 @@ public class T02UdpFileSender {
 				sendData(buffer, readbytes);
 				
 				totalReadBytes += readbytes;
-				System.out.println("진행상태 : " + totalReadBytes + "/" + fileSize + "Byte(s) ("
+				System.out.println("진행상태 : " + totalReadBytes + "/" + fileSize + "Bytes ("
 																+ (totalReadBytes * 100 / fileSize) + "%)");
 			}
 			long endTime = System.currentTimeMillis();
-			long diffTime = endTime = startTime;
+			long diffTime = endTime - startTime;
 			double transferSpeed = fileSize / diffTime;
 			
-			System.out.println("소요시간 : " + diffTime + "(ms)");
+			System.out.println("소요시간 : " + diffTime  + "(ms)");
 			System.out.println("평균 전송 속도 : " + transferSpeed + " Bytes/ms");
 			System.out.println("전송 완료");
 			
@@ -100,5 +100,9 @@ public class T02UdpFileSender {
 	private void sendData(byte[] bytes, int length) throws IOException {
 		dp = new DatagramPacket(bytes, length, receiverAddr, port);
 		ds.send(dp);
+	}
+	
+	public static void main(String[] args) {
+		new T02UdpFileSender("192.168.141.33", 8888).start();
 	}
 }
