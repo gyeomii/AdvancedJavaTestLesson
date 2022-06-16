@@ -15,7 +15,9 @@
 [Body]
 <hr>
 <br>
-Response Message
+
+# Response Message
+
 <hr>
 [Status Line]<br>
 (HTTP/1.1_200_OK)(버전, 상태, 메세지)
