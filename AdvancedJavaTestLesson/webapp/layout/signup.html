@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SignUP Page</title>
+<link rel="stylesheet" href="../css/signup.css" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+h1{
+text-align: center;
+font-size: 25px;
+}
+</style>
+</head>
+
+<body>
+<h1>Welcome to LOLO VÈVÈ</h1> 
+<form action="../jsp/signup.jsp" method="post">
+    <div class="wrapper">
+        <div class="title"><h1>Create an account</h1></div>
+        <label for="email">ID(e-mail)</label>
+        <div class="email">
+            <input name="email" placeholder="Enter your e-mail" required>
+            <div id="emailError" class="error"></div>
+        </div>
+        <label for="name">Name</label>
+        <div class="name">
+            <input name="name"  type="text" placeholder="Enter your name" required>
+            <div id="nameError" class="error"></div>
+        </div>
+        <label for="password">Password</label>
+        <div class="password">
+            <input name="password" type="password" placeholder="Enter your password" required>
+            <div id="passwordError" class="error"></div>
+        </div>
+        <div class="passwordCheck">
+            <input name="passwordCheck" type="password" placeholder="Re-enter your password" required>
+            <div id="passwordCheckError" class="error"></div>
+        </div>
+        <label for="phone">Phone</label>
+        <div class="phone">
+            <input name="phone1" id="phone1" type="text" placeholder="000" size="1" maxlength="3" pattern="[0-9]{2,3}" required> -
+            <input name="phone2" id="phone2" type="text" placeholder="0000" size="3" maxlength="4" pattern="[0-9]{3,4}" required> -
+            <input name="phone3" id="phone3" type="text" placeholder="0000" size="3" maxlength="4" pattern="[0-9]{4}" required>
+        </div>
+        <div class="country">
+            <select name="country">
+                <option selected disabled>Country</option>
+                <option>United State</option>
+                <option>Korea</option>
+                <option>Canada</option>
+                <option>Italy</option>
+            </select>
+            <div id="areaError" class="error"></div>
+        </div>
+        <div class="gender">
+            <input type="radio" name="gender" value="male" required>Male  
+            <input type="radio" name="gender" value="female" required>Female
+            <div id="genderError" class="error"></div>
+        </div>
+        <div class="line">
+            <hr>
+        </div>
+        <div class="signUp">
+            <input type="submit" name="signUp" value="Create an account">
+        </div>
+    </div>
+</form>
+</body>
+
+</html>

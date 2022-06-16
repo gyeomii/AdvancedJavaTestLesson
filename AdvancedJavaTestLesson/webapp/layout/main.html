@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>LOLO VÈVÈ</title>
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="wrapper">
+   <header>
+    <img src="../image/logo.png">
+   	<a href="main.html" target="_self">LOLO VÈVÈ</a>
+   	<audio src="../multi/bgm.mp3" controls autoplay></audio>
+   </header>
+   
+   <nav id="nav">
+      <ul>
+         <li id = "navid">
+            <a href="nav/aboutus.html" target="iframe">About LOLO VÈVÈ</a> 
+         </li>
+         
+         <li>
+            <a href="nav/contact.html" target="iframe">Contact Us</a> 
+         </li>
+         
+         <li>
+            <a href="nav/notice.html" target="iframe">legal Notice</a> 
+         </li>
+      </ul>
+   </nav>
+   
+   <aside id="left">
+	         <div>
+	            <a href="prod/new.html" target="iframe">New Arrivals</a>
+	         </div>
+	         <div>
+	            <a href="prod/shoes.html" target="iframe">SHOES</a>
+	         </div>
+	         <div>
+	            <a href="prod/bags.html" target="iframe">BAGS</a>
+	         </div>
+	         <div>
+	            <a href="prod/accessories.html" target="iframe">ACCESSORIES</a>
+	         </div>
+	         <div>
+	            <a href="prod/watches.html" target="iframe">WATCHES</a>
+	         </div>
+	         <div>
+	            <a href="prod/jewelry.html" target="iframe">JEWELRY</a>
+	         </div>
+   </aside>
+   
+   <section>
+      <iframe name="iframe" src="mainImage.html" style="border:none" ></iframe>  
+   </section>
+
+   <aside id="right">
+   		<div id="login">Account<br><br>
+   			<label>ID</label><br><input type="text"><br>
+   			<label>PW</label><br><input type="text"><br><br>
+   			<input type="button" value="Sign in" onclick="alert('Could not log in due to server maintenance.\nWe apologize for any inconvenience.')">
+   			<input type="button" value="Create an account" onclick="iframe.location.href='signup.html'">
+   		<br>
+   		<br>
+   		</div>
+   		<div id="cart">CART<br><br><br><br><br>Your CART Is Empty<br><br><br>
+   			<input type="button" value="Go to CART" onclick="iframe.location.href='cart.html'">
+   		</div>
+   		<br>
+   		<br>
+   </aside>
+   
+   <footer>
+   Powered by Gyeom LOLO VÈVÈ GROUP Copyright © 3000-3022 LOLO VÈVÈ - All rights reserved (Fake Site for study HTML5, CSS3, JS)
+   </footer>
+   </div>
+</body>
+</html>

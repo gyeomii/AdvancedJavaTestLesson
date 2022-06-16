@@ -1,0 +1,78 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Playfair Display', serif;
+	font-size: large;
+}
+
+body {
+	background: #FFFFFF;
+}
+
+table {
+	border: 5px solid #000000;
+	background: #FFFFFF;
+	display: inline-block;
+	border-collapse: collapse;
+	margin-top: 100px;
+}
+
+form {
+	text-align: center;
+}
+
+#name {
+	width: 250px;
+	height: 40px;
+}
+
+#price, #sum {
+	width: 250px;
+	height: 40px;
+}
+
+td {
+	height: 40px;
+	text-align: center;
+}
+
+#qty {
+	width: 100px;
+}
+
+input {
+	width: 95%;
+	height: 40px;
+	background: #FFFFFF;
+	text-align: center;
+}
+
+#reset, #sumPrice {
+	width: 200px;
+	height: 40px;
+	font-weight: bold;
+}
+
+#tr1, #tr2, #tr3, #tr4, #tr5, #tr6 {
+	text-align: right;
+}
+
+caption {
+	font-size: 2.5em;
+}
+
+.i3 {
+	width: 90px;
+}
+
+div {
+	margin-top: 80px;
+	border: 1px solid red;
+	width: calc(48%);
+	height: 600px;
+	float: right;
+}
+
+p, #t {
+	font-weight: bold;
+}

@@ -162,7 +162,7 @@ public class T01MyHTTPServer {
 		String header = "HTTP/1.1 200 OK\r\n" + "Server: MyHTTPServer 1.0\r\n" + "Content-length: " + length + "\r\n"
 				+ "Content-type: " + contentType + "; charset=" + this.encoding;
 
-		return null;
+		return header.getBytes();
 	}
 	/**
 	 * 에러페이지 생성하기
