@@ -1,8 +1,20 @@
 package A14XMLTest.basic;
 
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.OutputKeys;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -27,7 +39,7 @@ public class T01DOMCreationTest {
 	 * 
 	 * 예를 들면, HTML DOM은 HTML엘리먼트 요소 및 속성 정보를 핸들링 하기위한 인터페이스를 제공한다.
 	 */
-	public void createDoc() throws ParserConfigurationException {
+	public void createDoc() throws ParserConfigurationException, TransformerException, IOException {
 		// XML문서를 생성하기 위한 DocumentBuilder 객체 생성하기
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 		DocumentBuilder builder = dbf.newDocumentBuilder();
@@ -133,6 +145,30 @@ public class T01DOMCreationTest {
 
 		// document에 root 엘리먼트 추가하기
 		document.appendChild(root);
+		
+		//XML 문자열로 변환하기
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		
+		DOMSource source = new DOMSource(document);
+		StreamResult result = new StreamResult(out);
+		
+		TransformerFactory transformerFactory = TransformerFactory.newInstance();
+		Transformer transformer = transformerFactory.newTransformer();
+		
+		//출력 인코딩 설정
+		transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+		
+		//들여쓰기 설정(공백 크기 : 2)
+		transformer.setOutputProperty(OutputKeys.INDENT,"yes");
+		transformer.setOutputProperty("{http://xml.apache.org/xslt", "2");
+		
+		//변환작업 시작
+		transformer.transform(source, result);
+		
+		//파일에 문서 저장하기
+		try(FileOutputStream fos = new FileOutputStream("./src/new_book.xml")) {
+			fos.write(out.toByteArray());
+		}
 
 	}
 }
