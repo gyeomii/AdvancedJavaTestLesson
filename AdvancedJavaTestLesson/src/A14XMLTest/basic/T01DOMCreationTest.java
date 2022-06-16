@@ -160,7 +160,7 @@ public class T01DOMCreationTest {
 		
 		//들여쓰기 설정(공백 크기 : 2)
 		transformer.setOutputProperty(OutputKeys.INDENT,"yes");
-		transformer.setOutputProperty("{http://xml.apache.org/xslt", "2");
+		transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
 		
 		//변환작업 시작
 		transformer.transform(source, result);
