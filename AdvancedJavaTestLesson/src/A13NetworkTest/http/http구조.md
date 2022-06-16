@@ -9,7 +9,7 @@
 ### [Request Line] <br>
 
 ```
-(POST_/ index.html_HTTP/1.1)(메소드방식, 주소, 버전)
+(POST_/index.html_HTTP/1.1)(메소드방식, 주소, 버전)
 ```
 <hr>
 
