@@ -2,6 +2,7 @@
 
 <hr>
 
+```
 <root>
 	<booklist>
 		<book>
@@ -27,4 +28,5 @@
 	</booklist>
 </root>
 
+```
 <hr>

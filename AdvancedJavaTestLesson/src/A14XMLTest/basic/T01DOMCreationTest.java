@@ -169,6 +169,9 @@ public class T01DOMCreationTest {
 		try(FileOutputStream fos = new FileOutputStream("./src/new_book.xml")) {
 			fos.write(out.toByteArray());
 		}
-
+	}
+	
+	public static void main(String[] args) throws Exception{
+		new T01DOMCreationTest().createDoc();
 	}
 }
