@@ -1,4 +1,4 @@
-package A14XMLTest.basic;
+package A14XMLTest;
 
 import java.net.URL;
 
