@@ -122,7 +122,7 @@ public class T01DOMCreationTest {
 		book = document.createElement("book");
 		book.setAttribute("isbn", "B004");
 		book.setAttribute("kind", "DB");
-
+		
 		// 자식 엘리먼트 생성 및 설정
 		title = document.createElement("title");
 		title.setTextContent("DB구현");
