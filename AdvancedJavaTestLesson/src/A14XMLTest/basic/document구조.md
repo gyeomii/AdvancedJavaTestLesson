@@ -1,5 +1,7 @@
 # Document
 
+-모든 구성요소는 다 Node 이다. Element, attribute,  text 
+
 <hr>
 
 ```

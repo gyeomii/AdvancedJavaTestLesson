@@ -20,7 +20,8 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
 /**
- * XML DOM을 이용한 XML문서 생성 예제 문서를 객체화 하겠다는 뜻 DOM표준이 이미 인터페이스로 구현이 되어있다.
+ * XML DOM을 이용한 XML문서 생성 예제 문서를 객체화 하겠다는 뜻
+ *  DOM표준이 이미 인터페이스로 구현이 되어있다.
  * 
  * @author "Gyeom"
  *
