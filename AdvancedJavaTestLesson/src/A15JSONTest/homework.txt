@@ -1,0 +1,20 @@
+{"Grid_20150827000000000227_1":
+	{
+		"totalCnt":14,
+		"startRow":1,
+		"endRow":5,
+		"result":
+			{
+			"code":"INFO-000",
+			"message":"정상 처리되었습니다."
+			},
+		"row":
+		[
+		{"ROW_NUM":1,"RECIPE_ID":195428,"IRDNT_SN":195429,"IRDNT_NM":"밥","IRDNT_CPCTY":"3공기","IRDNT_TY_CODE":"3060001","IRDNT_TY_NM":"주재료"},
+		{"ROW_NUM":2,"RECIPE_ID":195428,"IRDNT_SN":195430,"IRDNT_NM":"오이","IRDNT_CPCTY":"1/2개","IRDNT_TY_CODE":"3060001","IRDNT_TY_NM":"주재료"},
+		{"ROW_NUM":3,"RECIPE_ID":195428,"IRDNT_SN":195431,"IRDNT_NM":"당근","IRDNT_CPCTY":"1/2개","IRDNT_TY_CODE":"3060001","IRDNT_TY_NM":"주재료"},
+		{"ROW_NUM":4,"RECIPE_ID":195428,"IRDNT_SN":195432,"IRDNT_NM":"가지","IRDNT_CPCTY":"1/2개","IRDNT_TY_CODE":"3060001","IRDNT_TY_NM":"주재료"},
+		{"ROW_NUM":5,"RECIPE_ID":195428,"IRDNT_SN":195433,"IRDNT_NM":"어린잎채소","IRDNT_CPCTY":"약간","IRDNT_TY_CODE":"3060001","IRDNT_TY_NM":"주재료"}
+		]
+	}
+}
