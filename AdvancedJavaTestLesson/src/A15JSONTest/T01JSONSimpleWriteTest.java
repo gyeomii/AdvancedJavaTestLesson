@@ -55,7 +55,7 @@ public class T01JSONSimpleWriteTest {
 		
 		mv.put("memList", memList);
 		
-		FileWriter fw = new FileWriter("./myJsonFile.txt");
+		FileWriter fw = new FileWriter("./src/A15JSONTEST/myJsonFile.txt");
 		fw.write(mv.toString());
 		fw.flush();
 		fw.close();
