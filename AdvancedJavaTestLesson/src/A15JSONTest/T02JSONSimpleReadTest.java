@@ -37,6 +37,5 @@ public class T02JSONSimpleReadTest {
 					jsonObj2.get("name"),jsonObj2.get("job"),jsonObj2.get("age"),jsonObj2.get("addr"));
 			System.out.println(str);
 		}
-		
 	}
 }
