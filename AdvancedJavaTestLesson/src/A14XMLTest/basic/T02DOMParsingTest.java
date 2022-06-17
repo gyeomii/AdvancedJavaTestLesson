@@ -50,28 +50,29 @@ public class T02DOMParsingTest {
 
 		// 엔터키에 해당하는 부분이 읽힐 수도 있으므로, getChildNodes() 보다는
 		// getElementsByTagName()을 이용해 접근하는 것이 좋다
-		Node titleNode = firstBookChildNodeList.item(0);
+		// 들여쓰기로 인해 0번 노드에 text노드가 있기 때문에 1로 접근
+		Node titleNode = firstBookChildNodeList.item(1);
 		Element titleElement = (Element) titleNode;
 		System.out.println("titleElement.getTagName() => " + titleElement.getTagName());
 
 		System.out.println("titleElement.getTextContent() => " + titleElement.getTextContent());
 
-//		// 전체출력하기
-//		System.out.println("----------------------------------------------");
-//		System.out.printf("%8s %8s %15s %10s %8s\n", "ISBN", "분류", "제목", "저자", "가격");
-//		System.out.println("----------------------------------------------");
-//
-//		for (int i = 0; i < bookNodeList.getLength(); i++) {
-//			Node bookNode = bookNodeList.item(i);
-//			Element element = (Element) bookNode;
-//			String isbn = element.getAttribute("isbn");
-//			String kind = element.getAttribute("kind");
-//			String title = element.getElementsByTagName("title").item(0).getTextContent().trim();
-//			String author = element.getElementsByTagName("author").item(0).getTextContent().trim();
-//			String price = element.getElementsByTagName("price").item(0).getTextContent().trim();
-//			String str = String.format("%8s %8s %15s %10s %8s", isbn, kind, title, author, price);
-//			System.out.println(str);
-//		}
+		// 전체출력하기
+		System.out.println("----------------------------------------------");
+		System.out.printf("%8s %8s %15s %10s %8s\n", "ISBN", "분류", "제목", "저자", "가격");
+		System.out.println("----------------------------------------------");
+
+		for (int i = 0; i < bookNodeList.getLength(); i++) {
+			Node bookNode = bookNodeList.item(i);
+			Element element = (Element) bookNode;
+			String isbn = element.getAttribute("isbn");
+			String kind = element.getAttribute("kind");
+			String title = element.getElementsByTagName("title").item(0).getTextContent().trim();
+			String author = element.getElementsByTagName("author").item(0).getTextContent().trim();
+			String price = element.getElementsByTagName("price").item(0).getTextContent().trim();
+			String str = String.format("%8s %8s %15s %10s %8s", isbn, kind, title, author, price);
+			System.out.println(str);
+		}
 	}
 
 	public static void main(String[] args) throws Exception {
