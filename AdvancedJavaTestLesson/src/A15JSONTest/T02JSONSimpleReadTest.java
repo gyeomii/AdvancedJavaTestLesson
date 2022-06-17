@@ -21,8 +21,8 @@ public class T02JSONSimpleReadTest {
 		String addr = (String) jsonobj.get("addr");
 		
 		System.out.println("name : " + name);
-		System.out.println("job : " + job);
-		System.out.println("age : " + age);
+		System.out.println("job  : " + job);
+		System.out.println("age  : " + age);
 		System.out.println("addr : " + addr);
 		
 		JSONArray memList = (JSONArray) jsonobj.get("memList");
