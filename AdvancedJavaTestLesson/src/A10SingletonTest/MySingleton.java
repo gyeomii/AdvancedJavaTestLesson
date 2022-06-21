@@ -19,8 +19,6 @@ public class MySingleton {
      ( 이 메서드의 이름은 보통 getInstance()로 지정한다. 접근 제어자는
        static으로 지정한다.)  
 */
-	
-	// 자기 자신의 class의 참조값을 저장하는 멤버변수 선언
 	private static MySingleton single;
 	
 	// 생성자를 private으로 지정한다.
