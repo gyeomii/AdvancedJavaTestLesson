@@ -37,8 +37,9 @@ public class T01JdbcTest {
 		try {
 			// 1. 드라이버 로딩
 			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
 			// 2. DB에 접속(Connection객체 생성)
-			String url = "jdbc:oracle:thin:@localhost:1521/xe";
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String userId = "KSG97";
 			String password = "java";
 			

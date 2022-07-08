@@ -310,9 +310,7 @@ public class T05MemberInfoTest {
 		System.out.println("-----------------------------------------------------------");
 
 		try {
-			conn = JDBCUtil3.getConnection();
-			
-			
+			conn = JDBCUtil3.getConnection();			
 			stmt = conn.createStatement();
 			
 			String sql = "select * from mymember";
